@@ -23,9 +23,9 @@ metadata:
 spec:                                                                                                                                                   
   storageClassName: manual                                                                                                                              
   capacity:                                                                                                                                             
-    storage: 100Gi                                                                                                                                      
+    storage: 500Gi                                                                                                                                      
   accessModes:                                                                                                                                          
     - ReadWriteMany                                                                                                                                     
   nfs:                                                                                                                                                  
-    path: /export/ssd/nextcloud/data/admin/files/Media
-    server: node06
+    path: /zfs/transmission/downloads/transmission
+    server: node05
