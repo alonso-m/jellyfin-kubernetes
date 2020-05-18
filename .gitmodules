@@ -1,0 +1,3 @@
+[submodule "jellyfin-helm"]
+	path = jellyfin-helm
+	url = https://github.com/brianmcarey/jellyfin-helm.git
