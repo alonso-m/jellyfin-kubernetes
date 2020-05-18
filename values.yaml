@@ -100,15 +100,29 @@ nodeSelector: {}
 
 tolerations: []
 
-affinity: {}
+affinity: 
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      podAffinityTerm:
+        labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - bitbucket
+            - bamboo
+            - nextcloud
+            - wordpress
+            - bitwarden
+            - transmission-openvpn
+        topologyKey: "kubernetes.io/hostname"
 
-extraVolumes: []
-  #- name: renderD129
-  #  hostPath:
-  #    path: /dev/dri/renderD129
+extraVolumes: 
+  - name: video10
+    hostPath:
+      path: /dev/video10
 
-extraVolumeMounts: []
-  #- mountPath: /dev/dri/renderD129
-  #  name: renderD129
-
-
+extraVolumeMounts: 
+  - mountPath: /dev/video10
+    name: video10

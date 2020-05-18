@@ -11,8 +11,8 @@ spec:
   accessModes:                                                                                                                                          
     - ReadWriteMany                                                                                                                                     
   nfs:                                                                                                                                                  
-    path: /export/ssd/jellyfin
-    server: node06
+    path: /zfs/application-data/jellyfin
+    server: node05
 ---
 apiVersion: v1                                                                                                                                          
 kind: PersistentVolume                                                                                                                                  
