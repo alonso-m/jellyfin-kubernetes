@@ -12,7 +12,7 @@ spec:
     - ReadWriteMany                                                                                                                                     
   nfs:                                                                                                                                                  
     path: /zfs/application-data/jellyfin
-    server: node05
+    server: node06
 ---
 apiVersion: v1                                                                                                                                          
 kind: PersistentVolume                                                                                                                                  
