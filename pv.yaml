@@ -11,8 +11,8 @@ spec:
   accessModes:                                                                                                                                          
     - ReadWriteMany                                                                                                                                     
   nfs:                                                                                                                                                  
-    path: /zfs/application-data/jellyfin
-    server: node06
+    path: /mnt/kingston/application-data/jellyfin
+    server: node00
 ---
 apiVersion: v1                                                                                                                                          
 kind: PersistentVolume                                                                                                                                  
@@ -27,5 +27,5 @@ spec:
   accessModes:                                                                                                                                          
     - ReadWriteMany                                                                                                                                     
   nfs:                                                                                                                                                  
-    path: /zfs/transmission/downloads/transmission
-    server: node05
+    path: /mnt/kingston/application-data/transmission/downloads/transmission
+    server: node00

@@ -96,33 +96,38 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector: {}
+nodeSelector:
+  k3s.io/hostname: "node00"
 
-tolerations: []
+tolerations:
+- key: "node-role.kubernetes.io/master"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
 
-affinity: 
-  podAntiAffinity:
-    preferredDuringSchedulingIgnoredDuringExecution:
-    - weight: 100
-      podAffinityTerm:
-        labelSelector:
-          matchExpressions:
-          - key: app
-            operator: In
-            values:
-            - bitbucket
-            - bamboo
-            - nextcloud
-            - wordpress
-            - bitwarden
-            - transmission-openvpn
-        topologyKey: "kubernetes.io/hostname"
+#affinity: 
+#  podAntiAffinity:
+#    preferredDuringSchedulingIgnoredDuringExecution:
+#    - weight: 100
+#      podAffinityTerm:
+#        labelSelector:
+#          matchExpressions:
+#          - key: app
+#            operator: In
+#            values:
+#            - bitbucket
+#            - bamboo
+#            - nextcloud
+#            - wordpress
+#            - bitwarden
+#            - transmission-openvpn
+#        topologyKey: "kubernetes.io/hostname"
 
 extraVolumes: 
-  - name: video10
+  - name: dri
     hostPath:
-      path: /dev/video10
+      path: /dev/dri
 
 extraVolumeMounts: 
-  - mountPath: /dev/video10
-    name: video10
+  - mountPath: /dev/dri
+    name: dri
